@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+body {
+  background: #5c9ce5;
+  font-family: "Nunito", sans-serif;
+}
+
+
+
+.round {
+  border-top-left-radius: 5%;
+  border-bottom-left-radius: 5%;
+}
+
+
+.absfix {
+  position: fixed;
+  bottom:-36px;
+  left: -26px;
+}
+
+
+
+.semi-donut-model-2{
+  width: 150px;
+  height: 75px;
+
+  position: relative;
+  text-align: center;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  border-radius: 10px 150px 0 0;
+  overflow: hidden;
+  color: black;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  box-sizing : border-box;
+  &:before, &:after{
+    content: '';
+    width: 150px;
+    height: 75px;
+    border:10px solid var(--fill);
+    border-top: none;
+    position: absolute;
+    transform-origin :50%  0% 0;
+    border-radius: 0 0 300px 300px ;
+    box-sizing : border-box;
+    left: 0;
+    top: 100%;
+  }
+  &:before {
+    border-color:rgba(0,0,0,.15);
+    transform: rotate(180deg);
+  }
+  &:after{
+      z-index: 3;
+     animation : 1s fillGraphAnimation ease-in;
+    transform: rotate( calc( 1deg * ( var(--percentage) * 1.8 ) ) );
+  }
+  &:hover{
+     &:after{
+        opacity: .8;
+        cursor: pointer;
+      }
+  }
+}
+
+.w-custom-width {
+  width: 23.33%;
+}
+
+
+
